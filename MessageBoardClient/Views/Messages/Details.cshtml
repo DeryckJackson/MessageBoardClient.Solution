@@ -1,0 +1,12 @@
+@using MessageBoardClient.Models;
+@model IEnumerable<MessageBoardClient.Models.Message>
+
+<h1>Message Details:</h1>
+
+<ul>
+  <li>Body: @message.Body</li>
+  <li>Date: @message.Date</li>
+  <li>UserName: @message.UserName</li>
+  <li>GroupId: @message.GroupId</li>
+</ul>
+

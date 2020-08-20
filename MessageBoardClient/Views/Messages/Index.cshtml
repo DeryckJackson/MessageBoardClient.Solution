@@ -1,0 +1,30 @@
+@{
+  Layout = "_Layout"
+}
+
+@using MessageBoardClient.Models;
+@model IEnumerable<MessageBoardClient.Models.Message>
+
+<h1>All Messages</h1>
+
+@if (Model.Any())
+{
+  <ol>
+    @foreach (Message message in Model)
+    {
+      <ul>
+        <li>ID: @message.MessageId</li>
+        <li>Title: @message.Title</li>
+        @* <li>Body: @message.Body</li>
+        <li>Date: @message.Date</li>
+        <li>UserName: @message.UserName</li>
+        <li>GroupId: @message.GroupId</li> *@
+      </ul>
+      <a href="/Messages/Details/@(message.MessageId)"><p>View Details</p></a>
+    }
+  </ol>
+}
+else
+{
+  <h3>No messages</h3>
+}
