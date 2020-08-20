@@ -3,14 +3,15 @@
 }
 
 @using MessageBoardClient.Models;
-@model MessageBoardClient.Models.Message
+@model List<MessageBoardClient.Models.Message>;
 
 <h1>Message Details:</h1>
-
-<ul>
-  <li>Body: @Model.Body</li>
-  <li>Date: @Model.Date</li>
-  <li>UserName: @Model.UserName</li>
-  <li>GroupId: @Model.GroupId</li>
-</ul>
-
+@foreach(Message message in Model)
+{
+  <ul>
+    <li>Body: @message.Body</li>
+    <li>Date: @message.Date</li>
+    <li>UserName: @message.UserName</li>
+    <li>GroupId: @message.GroupId</li>
+  </ul>
+}

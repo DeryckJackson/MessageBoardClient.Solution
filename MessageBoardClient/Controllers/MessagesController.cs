@@ -15,7 +15,7 @@ namespace MessageBoardClient.Controllers
       return View(allMessages);
     }
 
-    [HttpGet("/details/{id}")]
+    [HttpGet("messages/details/{id}")]
     public ActionResult Details(int id)
     {
       var thisMessage = Message.GetDetails(id);

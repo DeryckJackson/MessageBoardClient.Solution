@@ -24,13 +24,13 @@ namespace MessageBoardClient.Models
 
       return messageList;
     }
-    public static Message GetDetails(int id)
+    public static List<Message> GetDetails(int id)
     {
       var apiCallTask = ApiHelper.Get(id);
       var result = apiCallTask.Result;
 
-      JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
-      Message message = JsonConvert.DeserializeObject<Message>(jsonResponse.ToString());
+      JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
+      List<Message> message = JsonConvert.DeserializeObject<List<Message>>(jsonResponse.ToString());
 
       return message;
     }
