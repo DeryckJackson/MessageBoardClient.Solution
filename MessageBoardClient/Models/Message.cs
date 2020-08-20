@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
-namespace MessageBoard.Models
+namespace MessageBoardClient.Models
 {
   public class Message
   {
